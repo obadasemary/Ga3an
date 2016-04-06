@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		AF0621331CB509B80008235A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0621321CB509B80008235A /* AppDelegate.swift */; };
-		AF0621351CB509B80008235A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0621341CB509B80008235A /* ViewController.swift */; };
 		AF0621381CB509B80008235A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF0621361CB509B80008235A /* Main.storyboard */; };
 		AF06213A1CB509B80008235A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF0621391CB509B80008235A /* Assets.xcassets */; };
 		AF06213D1CB509B80008235A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF06213B1CB509B80008235A /* LaunchScreen.storyboard */; };
 		AF0621481CB509B90008235A /* Ga3anTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0621471CB509B90008235A /* Ga3anTests.swift */; };
 		AF0621531CB509B90008235A /* Ga3anUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0621521CB509B90008235A /* Ga3anUITests.swift */; };
+		AF0621611CB50AD00008235A /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0621601CB50AD00008235A /* RestaurantTableViewController.swift */; };
+		AF0621631CB523A10008235A /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0621621CB523A10008235A /* RestaurantTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		AF06212F1CB509B80008235A /* Ga3an.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ga3an.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0621321CB509B80008235A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF0621341CB509B80008235A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF0621371CB509B80008235A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF0621391CB509B80008235A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF06213C1CB509B80008235A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		AF06214E1CB509B90008235A /* Ga3anUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ga3anUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0621521CB509B90008235A /* Ga3anUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ga3anUITests.swift; sourceTree = "<group>"; };
 		AF0621541CB509B90008235A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF0621601CB50AD00008235A /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		AF0621621CB523A10008235A /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				AF0621321CB509B80008235A /* AppDelegate.swift */,
-				AF0621341CB509B80008235A /* ViewController.swift */,
+				AF0621601CB50AD00008235A /* RestaurantTableViewController.swift */,
+				AF0621621CB523A10008235A /* RestaurantTableViewCell.swift */,
 				AF0621361CB509B80008235A /* Main.storyboard */,
 				AF0621391CB509B80008235A /* Assets.xcassets */,
 				AF06213B1CB509B80008235A /* LaunchScreen.storyboard */,
@@ -259,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF0621351CB509B80008235A /* ViewController.swift in Sources */,
+				AF0621611CB50AD00008235A /* RestaurantTableViewController.swift in Sources */,
+				AF0621631CB523A10008235A /* RestaurantTableViewCell.swift in Sources */,
 				AF0621331CB509B80008235A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
