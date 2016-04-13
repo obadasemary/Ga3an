@@ -18,6 +18,7 @@
 		AF7F03061CBA82FE00AEEC70 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */; };
 		AFA6D9CF1CBBB75C006CEFBD /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */; };
 		AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */; };
+		AFF712D61CBE717800097FC6 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF712D51CBE717800097FC6 /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
+		AFF712D51CBE717800097FC6 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				AF0621621CB523A10008235A /* RestaurantTableViewCell.swift */,
 				AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */,
 				AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */,
+				AFF712D51CBE717800097FC6 /* ReviewViewController.swift */,
 				AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */,
 				AF0621361CB509B80008235A /* Main.storyboard */,
 				AF0621391CB509B80008235A /* Assets.xcassets */,
@@ -273,6 +276,7 @@
 			files = (
 				AFA6D9CF1CBBB75C006CEFBD /* Restaurant.swift in Sources */,
 				AF0621611CB50AD00008235A /* RestaurantTableViewController.swift in Sources */,
+				AFF712D61CBE717800097FC6 /* ReviewViewController.swift in Sources */,
 				AF0621631CB523A10008235A /* RestaurantTableViewCell.swift in Sources */,
 				AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */,
 				AF7F03061CBA82FE00AEEC70 /* RestaurantDetailViewController.swift in Sources */,
