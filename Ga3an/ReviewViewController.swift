@@ -10,8 +10,8 @@ import UIKit
 
 class ReviewViewController: UIViewController {
     
-    @IBOutlet var backgroundImageView:UIImageView!
-    @IBOutlet var ratingStackView:UIStackView!
+    @IBOutlet var backgroundImageView: UIImageView!
+    @IBOutlet var ratingStackView: UIStackView!
     @IBOutlet weak var dislikeButton: UIButton!
     @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var greatButton: UIButton!
