@@ -38,7 +38,7 @@ class RestaurantTableViewController: UITableViewController {
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
-        tableView.estimatedRowHeight = 80.0
+        tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     

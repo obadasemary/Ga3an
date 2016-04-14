@@ -12,6 +12,9 @@ class ReviewViewController: UIViewController {
     
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet var ratingStackView:UIStackView!
+    @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var goodButton: UIButton!
+    @IBOutlet weak var greatButton: UIButton!
     
     var rating: String?
 
@@ -26,9 +29,14 @@ class ReviewViewController: UIViewController {
 //        ratingStackView.transform = CGAffineTransformMakeScale(0.0, 0.0)
 //        ratingStackView.transform = CGAffineTransformMakeTranslation(0, 500)
         
-        let scale = CGAffineTransformMakeScale(0.0, 0.0)
+//        let scale = CGAffineTransformMakeScale(0.0, 0.0)
+//        let translate = CGAffineTransformMakeTranslation(0, 500)
+//        ratingStackView.transform = CGAffineTransformConcat(scale, translate)
+        
         let translate = CGAffineTransformMakeTranslation(0, 500)
-        ratingStackView.transform = CGAffineTransformConcat(scale, translate)
+        dislikeButton.transform = translate
+        goodButton.transform = translate
+        greatButton.transform = translate
     }
     
 //    override func viewWillAppear(animated: Bool) {
@@ -46,9 +54,23 @@ class ReviewViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
+        // Spring animation
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
             
-            self.ratingStackView.transform = CGAffineTransformIdentity
+            self.dislikeButton.transform = CGAffineTransformIdentity
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.5, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+            
+            self.goodButton.transform = CGAffineTransformIdentity
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.5, delay: 0.4, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+            
+            self.greatButton.transform = CGAffineTransformIdentity
+            
             }, completion: nil)
 
     }

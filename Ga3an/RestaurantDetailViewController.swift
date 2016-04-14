@@ -35,6 +35,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        if restaurant.rating != "" {
+            ratingButton.setImage(UIImage(named: restaurant.rating), forState: .Normal)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -87,6 +91,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         if let reviewViewController = segue.sourceViewController as? ReviewViewController {
             if let rating = reviewViewController.rating {
+                restaurant.rating = rating
                 ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
             }
         }
