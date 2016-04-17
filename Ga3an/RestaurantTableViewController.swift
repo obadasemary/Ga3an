@@ -167,6 +167,10 @@ class RestaurantTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
+        
+    }
+    
 //    // MARK: - Configure Status Bar
 //    
 //    override func prefersStatusBarHidden() -> Bool {

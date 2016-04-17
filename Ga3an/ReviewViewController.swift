@@ -26,31 +26,11 @@ class ReviewViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         
-//        ratingStackView.transform = CGAffineTransformMakeScale(0.0, 0.0)
-//        ratingStackView.transform = CGAffineTransformMakeTranslation(0, 500)
-        
-//        let scale = CGAffineTransformMakeScale(0.0, 0.0)
-//        let translate = CGAffineTransformMakeTranslation(0, 500)
-//        ratingStackView.transform = CGAffineTransformConcat(scale, translate)
-        
         let translate = CGAffineTransformMakeTranslation(0, 500)
         dislikeButton.transform = translate
         goodButton.transform = translate
         greatButton.transform = translate
     }
-    
-//    override func viewWillAppear(animated: Bool) {
-//        
-////        UIView.animateWithDuration(1.0, delay: 0.0, options: [], animations: {
-////            
-////            self.ratingStackView.transform = CGAffineTransformIdentity
-////            }, completion: nil)
-//        
-//        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-//            
-//            self.ratingStackView.transform = CGAffineTransformIdentity
-//            }, completion: nil)
-//    }
 
     override func viewDidAppear(animated: Bool) {
         
