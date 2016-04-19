@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -18,7 +19,9 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet var noButton: UIButton!
     
     var isVisited = true
-
+    
+    var restaurant:Restaurant!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,10 +92,32 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             return
         }
         
-        print("Name: \(name)")
-        print("Type: \(type)")
-        print("Location: \(location)")
-        print("Have you been here: \(isVisited)")
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+            
+            restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: managedObjectContext) as! Restaurant
+            
+            restaurant.name = name!
+            restaurant.type = type!
+            restaurant.location = location!
+            
+            if let restaurantImage = imageView.image {
+                restaurant.image = UIImagePNGRepresentation(restaurantImage)
+            }
+            
+            restaurant.isVisited = isVisited
+            
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print(error)
+                return
+            }
+        }
+        
+        print("Name: \(restaurant.name)")
+        print("Type: \(restaurant.type)")
+        print("Location: \(restaurant.location)")
+        print("Have you been here: \(restaurant.isVisited)")
         
         dismissViewControllerAnimated(true, completion: nil)
     }
