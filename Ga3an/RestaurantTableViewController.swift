@@ -9,12 +9,17 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
     var restaurants:[Restaurant] = []
     
     var fetchedResultsController: NSFetchedResultsController!
     
+    var searchController: UISearchController!
+    var searchResults:[Restaurant] = []
+    
+    // MARK: - sharedContext
+
     var sharedContext: NSManagedObjectContext {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }
@@ -36,6 +41,17 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         fetchedResultsController.delegate = self
         
         reFetch()
+        
+        // Adding a search bar
+        searchController = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        // Customize the appearance of the search bar
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.tintColor = UIColor(red: 100.0/255.0, green: 100.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+        searchController.searchBar.barTintColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.6)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,6 +59,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         navigationController?.hidesBarsOnSwipe = true
     }
+    
+    // MARK: - ReFetch Results Controller
     
     private func reFetch() {
         do {
@@ -52,6 +70,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             print(error)
         }
     }
+    
 
     // MARK: - Table view data source
 
@@ -60,21 +79,27 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurants.count
+        
+        if searchController.active {
+            return searchResults.count
+        } else {
+            return restaurants.count
+        }
     }
-
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! RestaurantTableViewCell
         
-        // Configure the cell...
-        cell.nameLabel.text = restaurants[indexPath.row].name
-        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image!)
-        cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.typeLabel.text = restaurants[indexPath.row].type
+        let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
         
-        if let isVisited = restaurants[indexPath.row].isVisited?.boolValue {
+        // Configure the cell...
+        cell.nameLabel.text = restaurant.name
+        cell.thumbnailImageView.image = UIImage(data: restaurant.image!)
+        cell.locationLabel.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
+        
+        if let isVisited = restaurant.isVisited?.boolValue {
             cell.accessoryType = isVisited ? .Checkmark : .None
         }
         
@@ -124,6 +149,15 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         return [deleteAction, shareAction]
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        
+        if searchController.active {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -132,7 +166,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destinationViewController as! RestaurantDetailViewController
-                destinationController.restaurant = restaurants[indexPath.row]
+                destinationController.restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
     }
@@ -141,7 +175,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
     }
     
-    // NSFetchedResultsControllerDelegate protocol
+    // MARK: - NSFetchedResultsControllerDelegate protocol
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         tableView.beginUpdates()
@@ -174,7 +208,28 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.endUpdates()
     }
     
+    // MARK: - Search
     
+    // updateSearchResultsForSearchController
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        if let searchText = searchController.searchBar.text {
+            filterContentForSearchText(searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    // filterContentForSearchText
+    func filterContentForSearchText(searchText: String) {
+        
+        searchResults = restaurants.filter({ (restaurant: Restaurant) -> Bool in
+            
+            let nameMatch = restaurant.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            let locationMatch = restaurant.location.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            
+            return nameMatch != nil || locationMatch != nil
+        })
+    }
     
 //    // MARK: - Configure Status Bar
 //    
