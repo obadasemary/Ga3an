@@ -15,6 +15,10 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     var fetchedResultsController: NSFetchedResultsController!
     
+    var sharedContext: NSManagedObjectContext {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,23 +27,15 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // Load the restaurants from database
         let fetchRequest = NSFetchRequest(entityName: "Restaurant")
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
-            
-            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-            
-            fetchedResultsController.delegate = self
-            
-            do {
-                try fetchedResultsController.performFetch()
-                restaurants = fetchedResultsController.fetchedObjects as! [Restaurant]
-            } catch {
-                print(error)
-            }
-        }
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        
+        reFetch()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,10 +43,14 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         navigationController?.hidesBarsOnSwipe = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func reFetch() {
+        do {
+            try fetchedResultsController.performFetch()
+            restaurants = fetchedResultsController.fetchedObjects as! [Restaurant]
+        } catch {
+            print(error)
+        }
     }
 
     // MARK: - Table view data source
@@ -110,10 +110,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         // Delete button
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) in
             
-            // Delete the row from the data source
-            self.restaurants.removeAtIndex(indexPath.row)
-            
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            // Delete the row from the database
+            let restaurantToDelete = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Restaurant
+            self.sharedContext.deleteObject(restaurantToDelete)
+            CoreDataStackManager.sharedInstance().saveContext()
+
         }
 
         // Set the button color
@@ -161,6 +162,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             if let _indexPath = indexPath {
                 tableView.reloadRowsAtIndexPaths([_indexPath], withRowAnimation: .Fade)
             }
+            
         default:
             tableView.reloadData()
         }

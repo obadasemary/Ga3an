@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -97,6 +98,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             if let rating = reviewViewController.rating {
                 restaurant.rating = rating
                 ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
+                
+                CoreDataStackManager.sharedInstance().saveContext()
             }
         }
     }

@@ -15,12 +15,17 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var typeTextField: UITextField!
     @IBOutlet var locationTextField: UITextField!
+    @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
     
     var isVisited = true
     
     var restaurant:Restaurant!
+    
+    var sharedContext: NSManagedObjectContext {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +86,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         let name = nameTextField.text
         let type = typeTextField.text
         let location = locationTextField.text
+        let phoneNumber = phoneNumberTextField.text
         
         if name == "" || type == "" || location == "" {
             
@@ -92,31 +98,26 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             return
         }
         
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
-            
-            restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: managedObjectContext) as! Restaurant
-            
-            restaurant.name = name!
-            restaurant.type = type!
-            restaurant.location = location!
-            
-            if let restaurantImage = imageView.image {
-                restaurant.image = UIImagePNGRepresentation(restaurantImage)
-            }
-            
-            restaurant.isVisited = isVisited
-            
-            do {
-                try managedObjectContext.save()
-            } catch {
-                print(error)
-                return
-            }
+        
+        restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: self.sharedContext) as! Restaurant
+        
+        restaurant.name = name!
+        restaurant.type = type!
+        restaurant.location = location!
+        restaurant.phoneNumber = phoneNumber!
+        
+        if let restaurantImage = imageView.image {
+            restaurant.image = UIImagePNGRepresentation(restaurantImage)
         }
+        
+        restaurant.isVisited = isVisited
+        
+        CoreDataStackManager.sharedInstance().saveContext()
         
         print("Name: \(restaurant.name)")
         print("Type: \(restaurant.type)")
         print("Location: \(restaurant.location)")
+        print("Phone Number: \(restaurant.phoneNumber)")
         print("Have you been here: \(restaurant.isVisited)")
         
         dismissViewControllerAnimated(true, completion: nil)
