@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -250,6 +251,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6o4-1E-VlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="78" y="1238"/>
+        </scene>
+        <!--Walkthrough Content View Controller-->
+        <scene sceneID="dBy-Wi-u5s">
+            <objects>
+                <viewController storyboardIdentifier="WalkthroughContentViewController" id="Bfs-T4-1rg" customClass="WalkthroughContentViewController" customModule="Ga3an" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kKo-cU-bIB"/>
+                        <viewControllerLayoutGuide type="bottom" id="5SK-Dk-djq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z9h-Mg-T0q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personalize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqx-Lr-nxw">
+                                <rect key="frame" x="222" y="28" width="157" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EgV-dQ-sox">
+                                <rect key="frame" x="30" y="78" width="540" height="418"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EgV-dQ-sox" secondAttribute="height" multiplier="270:209" id="7jz-gI-IBZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin your favorite restaurants and create your own food guide" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eo-VI-KGf">
+                                <rect key="frame" x="159" y="514" width="282" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="AaD-wv-t8w"/>
+                                    <constraint firstAttribute="height" constant="64" id="hGg-mG-h7L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7gm-od-rHB">
+                                <rect key="frame" x="281" y="563" width="39" height="37"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jy5-No-POl">
+                                <rect key="frame" x="541" y="562" width="39" height="30"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="Bfs-T4-1rg" eventType="touchUpInside" id="v7f-6v-to0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83529411764705885" green="0.16862745098039217" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xqx-Lr-nxw" firstAttribute="centerX" secondItem="z9h-Mg-T0q" secondAttribute="centerX" id="03f-tV-VRW"/>
+                            <constraint firstItem="xqx-Lr-nxw" firstAttribute="top" secondItem="kKo-cU-bIB" secondAttribute="bottom" constant="8" id="6S2-VJ-Uyw"/>
+                            <constraint firstItem="5SK-Dk-djq" firstAttribute="top" secondItem="7gm-od-rHB" secondAttribute="bottom" id="76y-AP-Z1L"/>
+                            <constraint firstItem="jy5-No-POl" firstAttribute="trailing" secondItem="z9h-Mg-T0q" secondAttribute="trailingMargin" id="7Jp-5H-1JY"/>
+                            <constraint firstItem="EgV-dQ-sox" firstAttribute="leading" secondItem="z9h-Mg-T0q" secondAttribute="leadingMargin" constant="10" id="B1d-LT-a8g"/>
+                            <constraint firstItem="7gm-od-rHB" firstAttribute="centerX" secondItem="z9h-Mg-T0q" secondAttribute="centerX" id="B5A-tu-ogr"/>
+                            <constraint firstItem="EgV-dQ-sox" firstAttribute="top" secondItem="xqx-Lr-nxw" secondAttribute="bottom" constant="14" id="Xl8-nu-AA6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EgV-dQ-sox" secondAttribute="trailing" constant="10" id="XoK-MR-swG"/>
+                            <constraint firstItem="5SK-Dk-djq" firstAttribute="top" secondItem="jy5-No-POl" secondAttribute="bottom" constant="8" id="r1W-px-iqP"/>
+                            <constraint firstItem="9eo-VI-KGf" firstAttribute="centerX" secondItem="z9h-Mg-T0q" secondAttribute="centerX" id="rb7-5O-p5N"/>
+                            <constraint firstItem="9eo-VI-KGf" firstAttribute="top" secondItem="EgV-dQ-sox" secondAttribute="bottom" constant="18" id="sno-uQ-lfp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="EgV-dQ-sox" id="MPf-5K-6fZ"/>
+                        <outlet property="contentLabel" destination="9eo-VI-KGf" id="NN3-hE-W5x"/>
+                        <outlet property="forwardButton" destination="jy5-No-POl" id="TLb-0d-y1h"/>
+                        <outlet property="headingLabel" destination="xqx-Lr-nxw" id="44s-Lh-k3i"/>
+                        <outlet property="pageControl" destination="7gm-od-rHB" id="b96-TU-aOn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="osl-en-jCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="-1718"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="c0Y-10-teY">
+            <objects>
+                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="cMe-gQ-ERW" customClass="WalkthroughPageViewController" customModule="Ga3an" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BtZ-tz-ohq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1702" y="-1718"/>
         </scene>
         <!--New Restaurant-->
         <scene sceneID="5FR-sa-iq5">

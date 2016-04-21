@@ -60,6 +60,21 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         navigationController?.hidesBarsOnSwipe = true
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
+        
+        if hasViewedWalkthrough {
+            return
+        }
+        
+        if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkthroughController") as? WalkthroughPageViewController {
+            
+            presentViewController(pageViewController, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - ReFetch Results Controller
     
     private func reFetch() {

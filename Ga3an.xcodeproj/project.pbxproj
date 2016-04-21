@@ -24,6 +24,8 @@
 		AFBEADFB1CC6562400C8C42A /* Ga3an.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFBEADF91CC6562400C8C42A /* Ga3an.xcdatamodeld */; };
 		AFDC297C1CC388E900623FB9 /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */; };
 		AFF712D61CBE717800097FC6 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF712D51CBE717800097FC6 /* ReviewViewController.swift */; };
+		AFFA13B71CC8CE26008B34AC /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */; };
+		AFFA13B91CC8D417008B34AC /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		AFBEADFA1CC6562400C8C42A /* Ga3an.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ga3an.xcdatamodel; sourceTree = "<group>"; };
 		AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
 		AFF712D51CBE717800097FC6 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
+		AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 				AF0AF3BD1CBFBE3F00B1A05E /* MapViewController.swift */,
 				AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */,
 				AF0EFD131CC76B43000CBA6B /* CoreDataStackManager.swift */,
+				AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */,
+				AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */,
 			);
 			path = Ga3an;
 			sourceTree = "<group>";
@@ -298,10 +304,12 @@
 				AFA6D9CF1CBBB75C006CEFBD /* Restaurant.swift in Sources */,
 				AFDC297C1CC388E900623FB9 /* AddRestaurantController.swift in Sources */,
 				AF0EFD141CC76B43000CBA6B /* CoreDataStackManager.swift in Sources */,
+				AFFA13B71CC8CE26008B34AC /* WalkthroughContentViewController.swift in Sources */,
 				AFBEADFB1CC6562400C8C42A /* Ga3an.xcdatamodeld in Sources */,
 				AF0621611CB50AD00008235A /* RestaurantTableViewController.swift in Sources */,
 				AFF712D61CBE717800097FC6 /* ReviewViewController.swift in Sources */,
 				AF0621631CB523A10008235A /* RestaurantTableViewCell.swift in Sources */,
+				AFFA13B91CC8D417008B34AC /* WalkthroughPageViewController.swift in Sources */,
 				AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */,
 				AF7F03061CBA82FE00AEEC70 /* RestaurantDetailViewController.swift in Sources */,
 				AF0621331CB509B80008235A /* AppDelegate.swift in Sources */,
