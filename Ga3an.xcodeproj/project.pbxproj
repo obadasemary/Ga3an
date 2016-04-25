@@ -18,13 +18,15 @@
 		AF0AF3BC1CBF9D8E00B1A05E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0AF3BB1CBF9D8E00B1A05E /* MapKit.framework */; };
 		AF0AF3BE1CBFBE3F00B1A05E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AF3BD1CBFBE3F00B1A05E /* MapViewController.swift */; };
 		AF0EFD141CC76B43000CBA6B /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0EFD131CC76B43000CBA6B /* CoreDataStackManager.swift */; };
-		AF3F5F561CCD05E500536843 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3F5F541CCD05E500536843 /* discover.storyboard */; };
-		AF3F5F581CCD061E00536843 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3F5F571CCD061E00536843 /* about.storyboard */; };
 		AF7F03061CBA82FE00AEEC70 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */; };
 		AFA6D9CF1CBBB75C006CEFBD /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */; };
 		AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */; };
 		AFBEADFB1CC6562400C8C42A /* Ga3an.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFBEADF91CC6562400C8C42A /* Ga3an.xcdatamodeld */; };
 		AFDC297C1CC388E900623FB9 /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */; };
+		AFECCE4F1CCE13070082D270 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */; };
+		AFECCE541CCE1CEB0082D270 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFECCE531CCE1CEB0082D270 /* about.storyboard */; };
+		AFECCE561CCE1D2A0082D270 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFECCE551CCE1D2A0082D270 /* discover.storyboard */; };
+		AFECCE581CCE25FB0082D270 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECCE571CCE25FB0082D270 /* WebViewController.swift */; };
 		AFF712D61CBE717800097FC6 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF712D51CBE717800097FC6 /* ReviewViewController.swift */; };
 		AFFA13B71CC8CE26008B34AC /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */; };
 		AFFA13B91CC8D417008B34AC /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */; };
@@ -65,13 +67,15 @@
 		AF0AF3BB1CBF9D8E00B1A05E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AF0AF3BD1CBFBE3F00B1A05E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AF0EFD131CC76B43000CBA6B /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
-		AF3F5F551CCD05E500536843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/discover.storyboard; sourceTree = "<group>"; };
-		AF3F5F571CCD061E00536843 /* about.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = about.storyboard; sourceTree = "<group>"; };
 		AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AFBEADFA1CC6562400C8C42A /* Ga3an.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ga3an.xcdatamodel; sourceTree = "<group>"; };
 		AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
+		AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		AFECCE531CCE1CEB0082D270 /* about.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = about.storyboard; sourceTree = "<group>"; };
+		AFECCE551CCE1D2A0082D270 /* discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = discover.storyboard; sourceTree = "<group>"; };
+		AFECCE571CCE25FB0082D270 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AFF712D51CBE717800097FC6 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
@@ -136,8 +140,8 @@
 				AFF712D51CBE717800097FC6 /* ReviewViewController.swift */,
 				AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */,
 				AF0621361CB509B80008235A /* Main.storyboard */,
-				AF3F5F571CCD061E00536843 /* about.storyboard */,
-				AF3F5F541CCD05E500536843 /* discover.storyboard */,
+				AFECCE551CCE1D2A0082D270 /* discover.storyboard */,
+				AFECCE531CCE1CEB0082D270 /* about.storyboard */,
 				AF0621391CB509B80008235A /* Assets.xcassets */,
 				AF06213B1CB509B80008235A /* LaunchScreen.storyboard */,
 				AF06213E1CB509B80008235A /* Info.plist */,
@@ -146,6 +150,8 @@
 				AF0EFD131CC76B43000CBA6B /* CoreDataStackManager.swift */,
 				AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */,
 				AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */,
+				AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */,
+				AFECCE571CCE25FB0082D270 /* WebViewController.swift */,
 			);
 			path = Ga3an;
 			sourceTree = "<group>";
@@ -281,10 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF06213D1CB509B80008235A /* LaunchScreen.storyboard in Resources */,
-				AF3F5F581CCD061E00536843 /* about.storyboard in Resources */,
-				AF3F5F561CCD05E500536843 /* discover.storyboard in Resources */,
 				AF06213A1CB509B80008235A /* Assets.xcassets in Resources */,
+				AFECCE561CCE1D2A0082D270 /* discover.storyboard in Resources */,
 				AF0621381CB509B80008235A /* Main.storyboard in Resources */,
+				AFECCE541CCE1CEB0082D270 /* about.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +326,9 @@
 				AFFA13B91CC8D417008B34AC /* WalkthroughPageViewController.swift in Sources */,
 				AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */,
 				AF7F03061CBA82FE00AEEC70 /* RestaurantDetailViewController.swift in Sources */,
+				AFECCE4F1CCE13070082D270 /* AboutTableViewController.swift in Sources */,
 				AF0621331CB509B80008235A /* AppDelegate.swift in Sources */,
+				AFECCE581CCE25FB0082D270 /* WebViewController.swift in Sources */,
 				AF0AF3BE1CBFBE3F00B1A05E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,14 +379,6 @@
 				AF06213C1CB509B80008235A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		AF3F5F541CCD05E500536843 /* discover.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF3F5F551CCD05E500536843 /* Base */,
-			);
-			name = discover.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

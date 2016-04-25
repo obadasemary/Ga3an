@@ -232,8 +232,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-Kq-me9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-Kq-me9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -739,8 +739,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="aKg-jN-HQG" kind="relationship" relationship="viewControllers" id="yQa-Fm-j0Q"/>
-                        <segue destination="P7Z-ca-qMK" kind="relationship" relationship="viewControllers" id="DpS-bE-NSp"/>
-                        <segue destination="y23-jf-oOE" kind="relationship" relationship="viewControllers" id="0lb-VK-qXv"/>
+                        <segue destination="g7I-bL-ofc" kind="relationship" relationship="viewControllers" id="ZqT-yO-TLr"/>
+                        <segue destination="mZY-cz-Crn" kind="relationship" relationship="viewControllers" id="eQc-Db-ffI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3p-FI-xOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -748,24 +748,24 @@
             <point key="canvasLocation" x="-1723" y="-455"/>
         </scene>
         <!--about-->
-        <scene sceneID="adZ-zR-lWA">
+        <scene sceneID="Gka-2w-6Rs">
             <objects>
-                <viewControllerPlaceholder storyboardName="about" id="y23-jf-oOE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Gbk-r6-7sl"/>
+                <viewControllerPlaceholder storyboardName="about" id="mZY-cz-Crn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="gEL-Sc-8Ju"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o3q-OQ-1Y4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17A-r0-e2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1022.5" y="-667"/>
+            <point key="canvasLocation" x="-1108.5" y="-984"/>
         </scene>
         <!--discover-->
-        <scene sceneID="q9y-md-dHz">
+        <scene sceneID="gpf-hV-U2W">
             <objects>
-                <viewControllerPlaceholder storyboardName="discover" id="P7Z-ca-qMK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zl4-lb-9ty"/>
+                <viewControllerPlaceholder storyboardName="discover" id="g7I-bL-ofc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Qg6-uE-0UA"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="duT-VR-0Qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZ0-Hx-RTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1014" y="-757"/>
+            <point key="canvasLocation" x="-1100" y="-817"/>
         </scene>
     </scenes>
     <resources>

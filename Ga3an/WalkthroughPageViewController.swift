@@ -50,20 +50,6 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         return viewControllerAtIndex(index)
     }
     
-//    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        return pageHeadings.count
-//    }
-//    
-//    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        
-//        if let pageContentViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkthroughContentViewController") as? WalkthroughContentViewController {
-//            
-//            return pageContentViewController.index
-//        }
-//        
-//        return 0
-//    }
-    
     func viewControllerAtIndex(index: Int) -> WalkthroughContentViewController? {
         
         if index == NSNotFound || index < 0 || index >= pageHeadings.count {
@@ -89,15 +75,4 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
             setViewControllers([nextViewController], direction: .Forward, animated: true, completion: nil)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
