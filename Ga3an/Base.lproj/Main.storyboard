@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aKg-jN-HQG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="W6t-qo-GRq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -96,7 +96,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXE-sl-BNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="327" y="-410"/>
+            <point key="canvasLocation" x="1139" y="-410"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="Qkh-30-upo">
@@ -232,7 +232,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-Kq-me9">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-Kq-me9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                         </subviews>
@@ -570,7 +570,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NXp-it-9kf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="oeW-wr-w2h" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1696" y="-403"/>
+            <point key="canvasLocation" x="2508" y="-403"/>
         </scene>
         <!--Restaurant Detail View Controller-->
         <scene sceneID="LY2-e2-cy7">
@@ -585,7 +585,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsp-6X-6U3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Xyw-1p-58r">
                                     <rect key="frame" x="0.0" y="64" width="600" height="300"/>
@@ -691,10 +691,11 @@
             </objects>
             <point key="canvasLocation" x="327" y="381"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favorites-->
         <scene sceneID="MZu-aG-D43">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aKg-jN-HQG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favorite" id="dc9-sW-RTz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J2f-Tb-yrm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -707,7 +708,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYW-Kq-QK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-403" y="-410"/>
+            <point key="canvasLocation" x="409" y="-410"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zsp-8d-wES">
@@ -725,13 +726,53 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQs-Tg-HR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="-403"/>
+            <point key="canvasLocation" x="1832" y="-403"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Eh8-p1-9iE">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="W6t-qo-GRq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Tin-JP-4zX">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aKg-jN-HQG" kind="relationship" relationship="viewControllers" id="yQa-Fm-j0Q"/>
+                        <segue destination="P7Z-ca-qMK" kind="relationship" relationship="viewControllers" id="DpS-bE-NSp"/>
+                        <segue destination="y23-jf-oOE" kind="relationship" relationship="viewControllers" id="0lb-VK-qXv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3p-FI-xOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1723" y="-455"/>
+        </scene>
+        <!--about-->
+        <scene sceneID="adZ-zR-lWA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="about" id="y23-jf-oOE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Gbk-r6-7sl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o3q-OQ-1Y4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1022.5" y="-667"/>
+        </scene>
+        <!--discover-->
+        <scene sceneID="q9y-md-dHz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="discover" id="P7Z-ca-qMK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zl4-lb-9ty"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duT-VR-0Qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1014" y="-757"/>
         </scene>
     </scenes>
     <resources>
         <image name="barrafina" width="640" height="640"/>
         <image name="close" width="84" height="84"/>
         <image name="dislike" width="84" height="84"/>
+        <image name="favorite" width="25" height="25"/>
         <image name="good" width="256" height="256"/>
         <image name="great" width="256" height="256"/>
         <image name="map" width="48" height="48"/>

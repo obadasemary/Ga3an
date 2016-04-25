@@ -181,6 +181,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destinationViewController as! RestaurantDetailViewController
+                destinationController.hidesBottomBarWhenPushed = true
                 destinationController.restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
@@ -245,6 +246,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             return nameMatch != nil || locationMatch != nil
         })
     }
+    
+    
     
 //    // MARK: - Configure Status Bar
 //    

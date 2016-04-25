@@ -18,6 +18,8 @@
 		AF0AF3BC1CBF9D8E00B1A05E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0AF3BB1CBF9D8E00B1A05E /* MapKit.framework */; };
 		AF0AF3BE1CBFBE3F00B1A05E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AF3BD1CBFBE3F00B1A05E /* MapViewController.swift */; };
 		AF0EFD141CC76B43000CBA6B /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0EFD131CC76B43000CBA6B /* CoreDataStackManager.swift */; };
+		AF3F5F561CCD05E500536843 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3F5F541CCD05E500536843 /* discover.storyboard */; };
+		AF3F5F581CCD061E00536843 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3F5F571CCD061E00536843 /* about.storyboard */; };
 		AF7F03061CBA82FE00AEEC70 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */; };
 		AFA6D9CF1CBBB75C006CEFBD /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */; };
 		AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */; };
@@ -63,6 +65,8 @@
 		AF0AF3BB1CBF9D8E00B1A05E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AF0AF3BD1CBFBE3F00B1A05E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AF0EFD131CC76B43000CBA6B /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		AF3F5F551CCD05E500536843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/discover.storyboard; sourceTree = "<group>"; };
+		AF3F5F571CCD061E00536843 /* about.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = about.storyboard; sourceTree = "<group>"; };
 		AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				AFF712D51CBE717800097FC6 /* ReviewViewController.swift */,
 				AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */,
 				AF0621361CB509B80008235A /* Main.storyboard */,
+				AF3F5F571CCD061E00536843 /* about.storyboard */,
+				AF3F5F541CCD05E500536843 /* discover.storyboard */,
 				AF0621391CB509B80008235A /* Assets.xcassets */,
 				AF06213B1CB509B80008235A /* LaunchScreen.storyboard */,
 				AF06213E1CB509B80008235A /* Info.plist */,
@@ -275,6 +281,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF06213D1CB509B80008235A /* LaunchScreen.storyboard in Resources */,
+				AF3F5F581CCD061E00536843 /* about.storyboard in Resources */,
+				AF3F5F561CCD05E500536843 /* discover.storyboard in Resources */,
 				AF06213A1CB509B80008235A /* Assets.xcassets in Resources */,
 				AF0621381CB509B80008235A /* Main.storyboard in Resources */,
 			);
@@ -363,6 +371,14 @@
 				AF06213C1CB509B80008235A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AF3F5F541CCD05E500536843 /* discover.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF3F5F551CCD05E500536843 /* Base */,
+			);
+			name = discover.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
