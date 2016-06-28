@@ -10,6 +10,8 @@ import UIKit
 import CloudKit
 
 class DiscoverTableViewController: UITableViewController {
+    
+    var restaurants: [CKRecord] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,37 @@ class DiscoverTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        getRecordsFromCloud()
+    }
+    
+    func getRecordsFromCloud() {
+        
+
+        let cloudContainer = CKContainer.defaultContainer()
+        let publicDatabase = cloudContainer.publicCloudDatabase
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Restaurant", predicate: predicate)
+        
+        publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            if let results = results {
+                
+//                print("Completed the download of Restaurant data")
+                
+                self.restaurants = results
+                
+                NSOperationQueue.mainQueue().addOperationWithBlock({ 
+                    
+                    self.tableView.reloadData()
+                })
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,23 +63,33 @@ class DiscoverTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return restaurants.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
-        // Configure the cell...
-
+        let restaurant = restaurants[indexPath.row]
+        
+        cell.textLabel?.text = restaurant.objectForKey("name") as? String
+        
+        if let image = restaurant.objectForKey("image") {
+            
+            let imageAsset = image as! CKAsset
+            cell.imageView?.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
+        }
+        
         return cell
     }
-    */
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
