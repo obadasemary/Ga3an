@@ -31,6 +31,10 @@ class DiscoverTableViewController: UITableViewController {
     
     func getRefreshControl() {
         
+        // Remove existing records before refreshing
+        restaurants.removeAll()
+        tableView.reloadData()
+        
         // pull to Refresh Control
         refreshControl = UIRefreshControl()
         refreshControl?.backgroundColor = UIColor.whiteColor()
