@@ -14,15 +14,10 @@ class DiscoverTableViewController: UITableViewController {
     @IBOutlet var spinner: UIActivityIndicatorView!
     
     var restaurants: [CKRecord] = []
+    var imageCache:NSCache = NSCache()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         spinner.hidesWhenStopped = true
         spinner.center = view.center
@@ -30,13 +25,16 @@ class DiscoverTableViewController: UITableViewController {
         spinner.startAnimating()
         
         getRecordsFromCloud()
+        
+        // pull to Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor.whiteColor()
+        refreshControl?.tintColor = UIColor.grayColor()
+        refreshControl?.addTarget(self, action: #selector(DiscoverTableViewController.getRecordsFromCloud), forControlEvents: UIControlEvents.ValueChanged)
+        
     }
     
     func getRecordsFromCloud() {
-        
-        // Remove existing records before refreshing
-        restaurants.removeAll()
-        tableView.reloadData()
         
         // Fetch data using convenience API
         let cloudContainer = CKContainer.defaultContainer()
@@ -64,6 +62,7 @@ class DiscoverTableViewController: UITableViewController {
             }
             
             print("Successfully retrieve the data from iCloud")
+            self.refreshControl?.endRefreshing()
             
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.spinner.stopAnimating()
@@ -74,26 +73,6 @@ class DiscoverTableViewController: UITableViewController {
         // Execute the query
         publicDatabase.addOperation(queryOperation)
         
-//        
-//        publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) in
-//            
-//            if error != nil {
-//                print(error)
-//                return
-//            }
-//            
-//            if let results = results {
-//                
-////                print("Completed the download of Restaurant data")
-//                
-//                self.restaurants = results
-//                
-//                NSOperationQueue.mainQueue().addOperationWithBlock({ 
-//                    
-//                    self.tableView.reloadData()
-//                })
-//            }
-//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -123,30 +102,42 @@ class DiscoverTableViewController: UITableViewController {
         cell.textLabel?.text = restaurant.objectForKey("name") as? String
         // Set default image
         cell.imageView?.image = UIImage(named: "photoalbum")
-        // Fetch Image from Cloud in background
-        let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
-        let fetchRecordsImageOperation = CKFetchRecordsOperation(recordIDs: [restaurant.recordID])
-        fetchRecordsImageOperation.desiredKeys = ["image"]
-        fetchRecordsImageOperation.queuePriority = .VeryHigh
-        fetchRecordsImageOperation.perRecordCompletionBlock = {(record:CKRecord?,
-            recordID:CKRecordID?, error:NSError?) -> Void in
-            if (error != nil) {
-                print("Failed to get restaurant image: \(error!.localizedDescription)")
-                return
-            }
+        
+        // Check if the image is stored in cache
+        if let imageFileURL = imageCache.objectForKey(restaurant.recordID) as? NSURL {
+            // Fetch image from cache
+            print("Get image from cache")
+            cell.imageView?.image = UIImage(data: NSData(contentsOfURL: imageFileURL)!)
             
-            if let restaurantRecord = record {
+        } else {
+            
+            // Fetch Image from Cloud in background
+            let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
+            let fetchRecordsImageOperation = CKFetchRecordsOperation(recordIDs: [restaurant.recordID])
+            fetchRecordsImageOperation.desiredKeys = ["image"]
+            fetchRecordsImageOperation.queuePriority = .VeryHigh
+            
+            fetchRecordsImageOperation.perRecordCompletionBlock = {(record:CKRecord?, recordID:CKRecordID?, error:NSError?) -> Void in
+                if (error != nil) {
+                    print("Failed to get restaurant image: \(error!.localizedDescription)")
+                    return
+                }
                 
-                NSOperationQueue.mainQueue().addOperationWithBlock() {
-                    
-                    if let imageAsset = restaurantRecord.objectForKey("image") as? CKAsset {
-                        cell.imageView?.image = UIImage(data: NSData(contentsOfURL:
-                            imageAsset.fileURL)!)
+                if let restaurantRecord = record {
+                    NSOperationQueue.mainQueue().addOperationWithBlock() {
+                        if let imageAsset = restaurantRecord.objectForKey("image") as? CKAsset {
+                            cell.imageView?.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
+                            
+                            // Add the image URL to cache
+                            self.imageCache.setObject(imageAsset.fileURL, forKey: restaurant.recordID)
+                        }
                     }
                 }
             }
+            
+            publicDatabase.addOperation(fetchRecordsImageOperation)
         }
-        publicDatabase.addOperation(fetchRecordsImageOperation)
+        
         return cell
     }
     
