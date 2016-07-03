@@ -26,21 +26,30 @@ class DiscoverTableViewController: UITableViewController {
         
         getRecordsFromCloud()
         
+        getRefreshControl()
+    }
+    
+    func getRefreshControl() {
+        
         // pull to Refresh Control
         refreshControl = UIRefreshControl()
         refreshControl?.backgroundColor = UIColor.whiteColor()
         refreshControl?.tintColor = UIColor.grayColor()
         refreshControl?.addTarget(self, action: #selector(DiscoverTableViewController.getRecordsFromCloud), forControlEvents: UIControlEvents.ValueChanged)
-        
     }
     
     func getRecordsFromCloud() {
+        
+        // Remove existing records before refreshing
+        restaurants.removeAll()
+        tableView.reloadData()
         
         // Fetch data using convenience API
         let cloudContainer = CKContainer.defaultContainer()
         let publicDatabase = cloudContainer.publicCloudDatabase
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Restaurant", predicate: predicate)
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
         // Create the query operation with the query
         let queryOperation = CKQueryOperation(query: query)
