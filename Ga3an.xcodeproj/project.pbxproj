@@ -32,6 +32,7 @@
 		AFF712D61CBE717800097FC6 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF712D51CBE717800097FC6 /* ReviewViewController.swift */; };
 		AFFA13B71CC8CE26008B34AC /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */; };
 		AFFA13B91CC8D417008B34AC /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */; };
+		C3F2C19E1D3666CD000F99CF /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		AFF712D51CBE717800097FC6 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */,
 				AFECCE571CCE25FB0082D270 /* WebViewController.swift */,
 				AF25AB4B1D201ACD0052F9F4 /* DiscoverTableViewController.swift */,
+				C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */,
 			);
 			path = Ga3an;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				AF0621631CB523A10008235A /* RestaurantTableViewCell.swift in Sources */,
 				AFFA13B91CC8D417008B34AC /* WalkthroughPageViewController.swift in Sources */,
 				AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */,
+				C3F2C19E1D3666CD000F99CF /* DiscoverTableViewCell.swift in Sources */,
 				AF7F03061CBA82FE00AEEC70 /* RestaurantDetailViewController.swift in Sources */,
 				AFECCE4F1CCE13070082D270 /* AboutTableViewController.swift in Sources */,
 				AF0621331CB509B80008235A /* AppDelegate.swift in Sources */,
@@ -535,6 +539,7 @@
 		AF06215E1CB509B90008235A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Ga3anUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.molutions.Ga3anUITests;

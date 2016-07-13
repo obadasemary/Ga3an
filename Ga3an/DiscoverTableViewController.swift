@@ -57,9 +57,10 @@ class DiscoverTableViewController: UITableViewController {
         
         // Create the query operation with the query
         let queryOperation = CKQueryOperation(query: query)
-        queryOperation.desiredKeys = ["name"]
+        queryOperation.desiredKeys = ["name", "type", "loaction"]
         queryOperation.queuePriority = .VeryHigh
         queryOperation.resultsLimit = 50
+        
         queryOperation.recordFetchedBlock = { (record: CKRecord!) -> Void in
             
             if let restaurantRecord = record {
@@ -88,11 +89,6 @@ class DiscoverTableViewController: UITableViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -105,22 +101,25 @@ class DiscoverTableViewController: UITableViewController {
         return restaurants.count
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! DiscoverTableViewCell
+        
         // Configure the cell...
         let restaurant = restaurants[indexPath.row]
-        cell.textLabel?.text = restaurant.objectForKey("name") as? String
+        cell.nameLabel.text = restaurant.objectForKey("name") as? String
+        cell.typeLabel.text = restaurant.objectForKey("type") as? String
+        cell.locationLabel.text = restaurant.objectForKey("loaction") as? String
+        print(cell.locationLabel.text)
+
         // Set default image
-        cell.imageView?.image = UIImage(named: "photoalbum")
+        cell.bgImageView.image = nil
         
         // Check if the image is stored in cache
         if let imageFileURL = imageCache.objectForKey(restaurant.recordID) as? NSURL {
             // Fetch image from cache
             print("Get image from cache")
-            cell.imageView?.image = UIImage(data: NSData(contentsOfURL: imageFileURL)!)
+            cell.bgImageView.image = UIImage(data: NSData(contentsOfURL: imageFileURL)!)
             
         } else {
             
@@ -139,7 +138,7 @@ class DiscoverTableViewController: UITableViewController {
                 if let restaurantRecord = record {
                     NSOperationQueue.mainQueue().addOperationWithBlock() {
                         if let imageAsset = restaurantRecord.objectForKey("image") as? CKAsset {
-                            cell.imageView?.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
+                            cell.bgImageView.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
                             
                             // Add the image URL to cache
                             self.imageCache.setObject(imageAsset.fileURL, forKey: restaurant.recordID)
