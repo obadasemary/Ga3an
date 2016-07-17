@@ -11,11 +11,18 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
+    @IBOutlet var spinner: UIActivityIndicatorView!
     @IBOutlet var mapView: MKMapView!
+    
     var restaurant: Restaurant!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        spinner.hidesWhenStopped = true
+        spinner.center = view.center
+        view.addSubview(spinner)
+        spinner.startAnimating()
         
         // Convert address to coordinate and annotate it on map
         let geoCoder = CLGeocoder()
@@ -23,6 +30,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             
             if error != nil {
                 print(error)
+                self.showError("Connection Error", mes: "Sorry Connection Error")
                 return
             }
             
@@ -42,6 +50,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     // Display the annotation
                     self.mapView.showAnnotations([annotation], animated: true)
                     self.mapView.selectAnnotation(annotation, animated: true)
+                    
                 }
             }
         }
@@ -53,11 +62,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         // Set the MKMapViewDelegate
         mapView.delegate = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -83,18 +87,20 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Pin color customization
         annotationView?.pinTintColor = UIColor.orangeColor()
         
+        self.spinner.stopAnimating()
+        
         return annotationView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func showError(title:String, mes: String) {
+        
+        let optionMenu = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
+        // Add actions to the menu
+        let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+        optionMenu.addAction(cancelAction)
+        // Display the menu
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+        
+        spinner.stopAnimating()
     }
-    */
-
 }

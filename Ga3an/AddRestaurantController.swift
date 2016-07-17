@@ -28,16 +28,6 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -154,9 +144,11 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         let scalingFactor = (originalImage.size.width > 1024) ? 1024 / originalImage.size.width : 1.0
         let scaledImage = UIImage(data: restaurant.image!, scale: scalingFactor)!
         
+        let image = UIImage(CGImage: scaledImage.CGImage!, scale: CGFloat(1.0), orientation: .UpMirrored)
+        
         // Write the image to local file for temporary use
         let imageFilePath = NSTemporaryDirectory() + restaurant.name
-        UIImageJPEGRepresentation(scaledImage, 0.8)?.writeToFile(imageFilePath, atomically: true)
+        UIImageJPEGRepresentation(image, 0.8)?.writeToFile(imageFilePath, atomically: true)
         
         // Create image asset for upload
         let imageFileURL = NSURL(fileURLWithPath: imageFilePath)
