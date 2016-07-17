@@ -72,7 +72,7 @@ class DiscoverTableViewController: UITableViewController {
             
             if (error != nil) {
                 print("Failed to get data from iCloud - \(error?.localizedDescription)")
-                self.showError("Error in iCloud", mes: "Failed to get data from iCloud)")
+                self.showError("Error in iCloud", mes: "Failed to get data from iCloud")
                 return
             }
             
@@ -134,7 +134,7 @@ class DiscoverTableViewController: UITableViewController {
                 
                 if (error != nil) {
                     print("Failed to get restaurant image: \(error!.localizedDescription)")
-//                    self.showError("Error", mes: "Failed to get restaurant image")
+                    self.showError("Error", mes: "Failed to get restaurant image")
                     return
                 }
                 

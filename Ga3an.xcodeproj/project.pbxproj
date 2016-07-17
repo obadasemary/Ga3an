@@ -23,6 +23,7 @@
 		AFA6D9CF1CBBB75C006CEFBD /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */; };
 		AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */; };
 		AFBC98821D3B7FDA00A1717D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBC98811D3B7FDA00A1717D /* CloudKit.framework */; };
+		AFBC98871D3B926200A1717D /* CloudKitClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC98861D3B926200A1717D /* CloudKitClient.swift */; };
 		AFBEADFB1CC6562400C8C42A /* Ga3an.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFBEADF91CC6562400C8C42A /* Ga3an.xcdatamodeld */; };
 		AFDC297C1CC388E900623FB9 /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */; };
 		AFECCE4F1CCE13070082D270 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */; };
@@ -76,6 +77,7 @@
 		AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AFBC98811D3B7FDA00A1717D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AFBC98861D3B926200A1717D /* CloudKitClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitClient.swift; sourceTree = "<group>"; };
 		AFBEADFA1CC6562400C8C42A /* Ga3an.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ga3an.xcdatamodel; sourceTree = "<group>"; };
 		AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
 		AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
@@ -141,29 +143,17 @@
 		AF0621311CB509B80008235A /* Ga3an */ = {
 			isa = PBXGroup;
 			children = (
+				AFBC98851D3B8E9E00A1717D /* View */,
+				AFBC98841D3B8E9300A1717D /* Model */,
+				AFBC98831D3B8E7D00A1717D /* Controllers */,
 				AF25AB481D2009050052F9F4 /* Ga3an.entitlements */,
 				AF0621321CB509B80008235A /* AppDelegate.swift */,
-				AF0621601CB50AD00008235A /* RestaurantTableViewController.swift */,
-				AF0621621CB523A10008235A /* RestaurantTableViewCell.swift */,
-				AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */,
-				AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */,
-				AFF712D51CBE717800097FC6 /* ReviewViewController.swift */,
-				AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */,
 				AF0621361CB509B80008235A /* Main.storyboard */,
 				AFECCE551CCE1D2A0082D270 /* discover.storyboard */,
 				AFECCE531CCE1CEB0082D270 /* about.storyboard */,
 				AF0621391CB509B80008235A /* Assets.xcassets */,
 				AF06213B1CB509B80008235A /* LaunchScreen.storyboard */,
 				AF06213E1CB509B80008235A /* Info.plist */,
-				AF0AF3BD1CBFBE3F00B1A05E /* MapViewController.swift */,
-				AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */,
-				AF0EFD131CC76B43000CBA6B /* CoreDataStackManager.swift */,
-				AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */,
-				AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */,
-				AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */,
-				AFECCE571CCE25FB0082D270 /* WebViewController.swift */,
-				AF25AB4B1D201ACD0052F9F4 /* DiscoverTableViewController.swift */,
-				C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */,
 			);
 			path = Ga3an;
 			sourceTree = "<group>";
@@ -184,6 +174,43 @@
 				AF0621541CB509B90008235A /* Info.plist */,
 			);
 			path = Ga3anUITests;
+			sourceTree = "<group>";
+		};
+		AFBC98831D3B8E7D00A1717D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF0621601CB50AD00008235A /* RestaurantTableViewController.swift */,
+				AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */,
+				AFF712D51CBE717800097FC6 /* ReviewViewController.swift */,
+				AF0AF3BD1CBFBE3F00B1A05E /* MapViewController.swift */,
+				AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */,
+				AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */,
+				AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */,
+				AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */,
+				AFECCE571CCE25FB0082D270 /* WebViewController.swift */,
+				AF25AB4B1D201ACD0052F9F4 /* DiscoverTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AFBC98841D3B8E9300A1717D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */,
+				AF0EFD131CC76B43000CBA6B /* CoreDataStackManager.swift */,
+				AFBC98861D3B926200A1717D /* CloudKitClient.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AFBC98851D3B8E9E00A1717D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF0621621CB523A10008235A /* RestaurantTableViewCell.swift */,
+				AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */,
+				C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +366,7 @@
 				AF25AB4C1D201ACD0052F9F4 /* DiscoverTableViewController.swift in Sources */,
 				AFF712D61CBE717800097FC6 /* ReviewViewController.swift in Sources */,
 				AF0621631CB523A10008235A /* RestaurantTableViewCell.swift in Sources */,
+				AFBC98871D3B926200A1717D /* CloudKitClient.swift in Sources */,
 				AFFA13B91CC8D417008B34AC /* WalkthroughPageViewController.swift in Sources */,
 				AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */,
 				C3F2C19E1D3666CD000F99CF /* DiscoverTableViewCell.swift in Sources */,
