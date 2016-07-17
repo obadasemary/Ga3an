@@ -22,6 +22,7 @@
 		AF7F03061CBA82FE00AEEC70 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */; };
 		AFA6D9CF1CBBB75C006CEFBD /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */; };
 		AFA6D9D11CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */; };
+		AFBC98821D3B7FDA00A1717D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBC98811D3B7FDA00A1717D /* CloudKit.framework */; };
 		AFBEADFB1CC6562400C8C42A /* Ga3an.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFBEADF91CC6562400C8C42A /* Ga3an.xcdatamodeld */; };
 		AFDC297C1CC388E900623FB9 /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */; };
 		AFECCE4F1CCE13070082D270 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */; };
@@ -32,7 +33,6 @@
 		AFFA13B71CC8CE26008B34AC /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */; };
 		AFFA13B91CC8D417008B34AC /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */; };
 		C3F2C19E1D3666CD000F99CF /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */; };
-		C3F2C1A01D3B7EEB000F99CF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F2C19F1D3B7EEB000F99CF /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +75,7 @@
 		AF7F03051CBA82FE00AEEC70 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		AFA6D9CE1CBBB75C006CEFBD /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
+		AFBC98811D3B7FDA00A1717D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AFBEADFA1CC6562400C8C42A /* Ga3an.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ga3an.xcdatamodel; sourceTree = "<group>"; };
 		AFDC297B1CC388E900623FB9 /* AddRestaurantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
 		AFECCE4E1CCE13070082D270 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
-		C3F2C19F1D3B7EEB000F99CF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF0AF3BC1CBF9D8E00B1A05E /* MapKit.framework in Frameworks */,
-				C3F2C1A01D3B7EEB000F99CF /* CloudKit.framework in Frameworks */,
+				AFBC98821D3B7FDA00A1717D /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +118,7 @@
 		AF0621261CB509B80008235A = {
 			isa = PBXGroup;
 			children = (
-				C3F2C19F1D3B7EEB000F99CF /* CloudKit.framework */,
+				AFBC98811D3B7FDA00A1717D /* CloudKit.framework */,
 				AFBEADF91CC6562400C8C42A /* Ga3an.xcdatamodeld */,
 				AF0AF3BB1CBF9D8E00B1A05E /* MapKit.framework */,
 				AF0621311CB509B80008235A /* Ga3an */,
