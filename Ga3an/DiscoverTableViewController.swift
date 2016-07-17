@@ -72,6 +72,7 @@ class DiscoverTableViewController: UITableViewController {
             
             if (error != nil) {
                 print("Failed to get data from iCloud - \(error?.localizedDescription)")
+                self.showError("Error in iCloud", mes: "Failed to get data from iCloud)")
                 return
             }
             
@@ -130,8 +131,10 @@ class DiscoverTableViewController: UITableViewController {
             fetchRecordsImageOperation.queuePriority = .VeryHigh
             
             fetchRecordsImageOperation.perRecordCompletionBlock = {(record:CKRecord?, recordID:CKRecordID?, error:NSError?) -> Void in
+                
                 if (error != nil) {
                     print("Failed to get restaurant image: \(error!.localizedDescription)")
+//                    self.showError("Error", mes: "Failed to get restaurant image")
                     return
                 }
                 
@@ -151,5 +154,17 @@ class DiscoverTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    func showError(title:String, mes: String) {
+        
+        let optionMenu = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
+        // Add actions to the menu
+        let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+        optionMenu.addAction(cancelAction)
+        // Display the menu
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+        
+        spinner.stopAnimating()
     }
 }
