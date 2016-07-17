@@ -258,9 +258,14 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="BHI-Kq-me9" id="eU6-Vv-0gu"/>
+                        <outlet property="spinner" destination="Mle-FZ-AJ0" id="wCR-9f-DdR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6o4-1E-VlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="Mle-FZ-AJ0">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </objects>
             <point key="canvasLocation" x="78" y="1238"/>
         </scene>
