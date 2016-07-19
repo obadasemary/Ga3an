@@ -23,7 +23,9 @@ if click on smiley face
 
 go to Discover
 
-![alt tag](http://ringau.com/Ga3an/photo_2016-07-17_14-58-27.jpg)
+![alt tag](http://ringau.com/Ga3an/photo_2016-07-18_15-29-35.jpg)
+
+![alt tag](http://ringau.com/Ga3an/photo_2016-07-18_15-29-39.jpg)
 
 if we need About
 
