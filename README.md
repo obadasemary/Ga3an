@@ -21,6 +21,10 @@ if click on smiley face
 
 ![alt tag](http://ringau.com/Ga3an/photo_2016-07-17_14-58-21.jpg)
 
+make sure that you are logged in with your iCloud account 
+
+on the simulator go to the settings app. You can do that with menu hardware, home and then open the settings app, select iCloud and make sure that you are logged in
+
 go to Discover
 
 ![alt tag](http://ringau.com/Ga3an/photo_2016-07-18_15-29-35.jpg)
