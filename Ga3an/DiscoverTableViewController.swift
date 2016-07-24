@@ -24,6 +24,13 @@ class DiscoverTableViewController: UITableViewController {
         view.addSubview(spinner)
         spinner.startAnimating()
         
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            self.showError("No Internet Connection", message: "Make sure your device is connected to the internet.")
+        }
+        
         getRecordsFromCloud()
         
         getRefreshControl()
@@ -72,7 +79,7 @@ class DiscoverTableViewController: UITableViewController {
             
             if (error != nil) {
                 print("Failed to get data from iCloud - \(error?.localizedDescription)")
-                self.showError("Error in iCloud", mes: "Failed to get data from iCloud")
+                self.showError("Error in iCloud", message: "Failed to get data from iCloud")
                 return
             }
             
@@ -134,7 +141,7 @@ class DiscoverTableViewController: UITableViewController {
                 
                 if (error != nil) {
                     print("Failed to get restaurant image: \(error!.localizedDescription)")
-                    self.showError("Error", mes: "Failed to get restaurant image")
+                    self.showError("Error", message: "Failed to get restaurant image")
                     return
                 }
                 
@@ -156,9 +163,9 @@ class DiscoverTableViewController: UITableViewController {
         return cell
     }
     
-    func showError(title:String, mes: String) {
+    func showError(title:String, message: String) {
         
-        let optionMenu = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
+        let optionMenu = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         // Add actions to the menu
         let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
         optionMenu.addAction(cancelAction)

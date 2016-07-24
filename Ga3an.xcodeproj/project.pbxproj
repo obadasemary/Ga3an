@@ -33,6 +33,7 @@
 		AFF712D61CBE717800097FC6 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF712D51CBE717800097FC6 /* ReviewViewController.swift */; };
 		AFFA13B71CC8CE26008B34AC /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */; };
 		AFFA13B91CC8D417008B34AC /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */; };
+		C3EB9E281D44B7AB006841C5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB9E271D44B7AB006841C5 /* Reachability.swift */; };
 		C3F2C19E1D3666CD000F99CF /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		AFF712D51CBE717800097FC6 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		AFFA13B61CC8CE26008B34AC /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		AFFA13B81CC8D417008B34AC /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		C3EB9E271D44B7AB006841C5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +211,7 @@
 				AF0621621CB523A10008235A /* RestaurantTableViewCell.swift */,
 				AFA6D9D01CBBD62D006CEFBD /* RestaurantDetailTableViewCell.swift */,
 				C3F2C19D1D3666CD000F99CF /* DiscoverTableViewCell.swift */,
+				C3EB9E271D44B7AB006841C5 /* Reachability.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			files = (
 				AFA6D9CF1CBBB75C006CEFBD /* Restaurant.swift in Sources */,
 				AFDC297C1CC388E900623FB9 /* AddRestaurantController.swift in Sources */,
+				C3EB9E281D44B7AB006841C5 /* Reachability.swift in Sources */,
 				AF0EFD141CC76B43000CBA6B /* CoreDataStackManager.swift in Sources */,
 				AFFA13B71CC8CE26008B34AC /* WalkthroughContentViewController.swift in Sources */,
 				AFBEADFB1CC6562400C8C42A /* Ga3an.xcdatamodeld in Sources */,
